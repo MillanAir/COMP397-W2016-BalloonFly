@@ -14,6 +14,7 @@ var objects;
             _super.call(this, "cloud");
             this._speed.y = 5; //cloud speed
             this._reset(this._topBounds);
+            this.name = "cloud";
         }
         // PRIVATE METHODS ++++++++++++++++++++++++++++
         Cloud.prototype._checkBounds = function (value) {
