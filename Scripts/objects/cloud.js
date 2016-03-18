@@ -5,18 +5,18 @@ var __extends = (this && this.__extends) || function (d, b) {
 };
 var objects;
 (function (objects) {
-    // Island CLASS ++++++++++++++++++++++++++++++++++++
-    var Island = (function (_super) {
-        __extends(Island, _super);
+    // OCEAN CLASS ++++++++++++++++++++++++++++++++++++
+    var Cloud = (function (_super) {
+        __extends(Cloud, _super);
         // PRIVATE INSTANCE VARIABLES +++++++++++++++++
         // CONSTRUCTOR METHOD +++++++++++++++++++++++++
-        function Island() {
-            _super.call(this, "island");
-            this._speed.y = 5; //island speed
+        function Cloud() {
+            _super.call(this, "cloud");
+            this._speed.y = 5; //cloud speed
             this._reset(this._topBounds);
         }
         // PRIVATE METHODS ++++++++++++++++++++++++++++
-        Island.prototype._checkBounds = function (value) {
+        Cloud.prototype._checkBounds = function (value) {
             // check to see if the top of the island 
             // has outside the viewport         
             if (this.y >= value) {
@@ -24,19 +24,22 @@ var objects;
             }
         };
         // reset the ocean offscreen
-        Island.prototype._reset = function (value) {
+        Cloud.prototype._reset = function (value) {
+            this._speed.y = Math.floor(Math.random() * 5) + 5;
+            this._speed.x = Math.floor(Math.random() * 4) - 2;
             this.y = value;
             this.x = Math.floor(Math.random() * this._rightBounds) + this._leftBounds;
         };
         // PUBLIC METHODS ++++++++++++++++++++++++++++++
-        Island.prototype.update = function () {
+        Cloud.prototype.update = function () {
             // scroll the ocean 5 px per frame
             this.y += this._speed.y;
+            this.x += this._speed.x;
             this._checkBounds(this._bottomBounds);
         };
-        return Island;
+        return Cloud;
     }(objects.GameObject));
-    objects.Island = Island;
+    objects.Cloud = Cloud;
 })(objects || (objects = {}));
 
-//# sourceMappingURL=island.js.map
+//# sourceMappingURL=cloud.js.map
