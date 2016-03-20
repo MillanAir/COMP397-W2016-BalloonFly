@@ -14,10 +14,10 @@ var config;
     var Screen = (function () {
         function Screen() {
         }
-        Screen.WIDTH = 640;
-        Screen.HEIGHT = 480;
-        Screen.CENTER_X = 320;
-        Screen.CENTER_Y = 240;
+        Screen.WIDTH = 1280;
+        Screen.HEIGHT = 720;
+        Screen.CENTER_X = 640;
+        Screen.CENTER_Y = 360;
         return Screen;
     }());
     config.Screen = Screen;

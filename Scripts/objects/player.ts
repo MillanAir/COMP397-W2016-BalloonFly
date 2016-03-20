@@ -4,6 +4,8 @@ module objects{
         
         private _leftBounds: number;
         private _rightBounds: number;
+        protected _topBounds:number;
+        protected _bottomBounds:number;
         
         public width: number;
         public height: number;
@@ -17,24 +19,34 @@ module objects{
             this.regX = this.width * 0.5;
             this.regY = this.height * 0.5;
             
-            this._leftBounds = this.width * 0.5;
-            this._rightBounds = config.Screen.WIDTH - (this.width * 0.5);
             
-            this.y = 430;
+            this._leftBounds = this.width * 0.5;
+            this._topBounds = this.regX;
+            this._bottomBounds = config.Screen.HEIGHT - this.regX;
+            
+            this.y = 360;
         }
         
         private _checkBounds():void{
+            // Left Bound Check
             if(this.x < this._leftBounds){
                 this.x = this._leftBounds;
             }
             
-            if(this.x > this._rightBounds){
-                this.x = this._rightBounds;
+            // Top Bound Check
+            if(this.y < this._topBounds){
+                this.y = this._topBounds;
             }
+            
+            //Bottom bound Check
+            if(this.y > this._bottomBounds){
+                this.y = this._bottomBounds;
+            }
+            
         }
         
         public update(): void{
-            this.x = stage.mouseX;            
+            this.y = stage.mouseY;            
             
             this._checkBounds();
         }

@@ -35,8 +35,8 @@ module objects {
         protected _checkBounds(value: number): void {
             
             // check if y value has met the reset criteria
-            if (this.y >= value) {
-                this._reset(this._topBounds);
+            if (this.x <= value) {
+                this._reset(this._leftBounds);
             }
         }
 
@@ -45,15 +45,15 @@ module objects {
             var leftBounds: number;
             var rightBounds: number;
             
-            this.y = value;
+            this.x = value;
         }
 
 
         // PUBLIC METHODS ++++++++++++++++++++++++++++++
         public update(): void {
             // scroll the ocean 5 px per frame
-            this.y += this._speed.y;
-            this._checkBounds(this._bottomBounds);
+            this.x += this._speed.y;
+            this._checkBounds(this._rightBounds);
         }
     }
 }

@@ -24,21 +24,21 @@ var objects;
         // PRIVATE METHODS ++++++++++++++++++++++++++++
         GameObject.prototype._checkBounds = function (value) {
             // check if y value has met the reset criteria
-            if (this.y >= value) {
-                this._reset(this._topBounds);
+            if (this.x <= value) {
+                this._reset(this._leftBounds);
             }
         };
         // Reset the Object offscreen
         GameObject.prototype._reset = function (value) {
             var leftBounds;
             var rightBounds;
-            this.y = value;
+            this.x = value;
         };
         // PUBLIC METHODS ++++++++++++++++++++++++++++++
         GameObject.prototype.update = function () {
             // scroll the ocean 5 px per frame
-            this.y += this._speed.y;
-            this._checkBounds(this._bottomBounds);
+            this.x += this._speed.y;
+            this._checkBounds(this._rightBounds);
         };
         return GameObject;
     }(createjs.Bitmap));
