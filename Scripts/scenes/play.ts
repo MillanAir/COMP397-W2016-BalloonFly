@@ -20,7 +20,7 @@ module scenes {
         // Start Method
         public start(): void {
             
-            this._cloudCount = 3;
+            this._cloudCount = 6;
             
             // Added cloud array
             this._clouds = new Array<objects.Cloud>();

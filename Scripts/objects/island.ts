@@ -5,9 +5,9 @@ module objects {
         
         // CONSTRUCTOR METHOD +++++++++++++++++++++++++
         constructor() {
-            super("island");
+            super("moon");
             
-           this._speed.x = -5; //island speed
+           this._speed.x = -0.05; //island speed
            this._reset(this._rightBounds);
            this.name = "island";
         }
@@ -24,8 +24,10 @@ module objects {
         // reset the ocean offscreen
         protected _reset(value:number):void {
             
-            this.x = (value+ this.width + 10);
-            this.y = Math.floor(Math.random() * this._bottomBounds) + this._topBounds;
+            this.x = this.centerX + 900;
+            this.y = this.centerY;
+           // this.x = (value+ this.width + 10);
+          //  this.y = Math.floor(Math.random() * this._bottomBounds) + this._topBounds;
         }
         
         

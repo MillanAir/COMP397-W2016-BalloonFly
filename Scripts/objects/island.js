@@ -11,8 +11,8 @@ var objects;
         // PRIVATE INSTANCE VARIABLES +++++++++++++++++
         // CONSTRUCTOR METHOD +++++++++++++++++++++++++
         function Island() {
-            _super.call(this, "island");
-            this._speed.x = -5; //island speed
+            _super.call(this, "moon");
+            this._speed.x = -0.05; //island speed
             this._reset(this._rightBounds);
             this.name = "island";
         }
@@ -26,8 +26,10 @@ var objects;
         };
         // reset the ocean offscreen
         Island.prototype._reset = function (value) {
-            this.x = (value + this.width + 10);
-            this.y = Math.floor(Math.random() * this._bottomBounds) + this._topBounds;
+            this.x = this.centerX + 900;
+            this.y = this.centerY;
+            // this.x = (value+ this.width + 10);
+            //  this.y = Math.floor(Math.random() * this._bottomBounds) + this._topBounds;
         };
         // PUBLIC METHODS ++++++++++++++++++++++++++++++
         Island.prototype.update = function () {

@@ -15,7 +15,7 @@ var scenes;
         // PUBLIC METHODS +++++++++++++++++++++
         // Start Method
         Play.prototype.start = function () {
-            this._cloudCount = 3;
+            this._cloudCount = 6;
             // Added cloud array
             this._clouds = new Array();
             // added ocean to the scene
