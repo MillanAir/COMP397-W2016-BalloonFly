@@ -28,8 +28,6 @@ var objects;
         Island.prototype._reset = function (value) {
             this.x = this.centerX + 900;
             this.y = this.centerY;
-            // this.x = (value+ this.width + 10);
-            //  this.y = Math.floor(Math.random() * this._bottomBounds) + this._topBounds;
         };
         // PUBLIC METHODS ++++++++++++++++++++++++++++++
         Island.prototype.update = function () {

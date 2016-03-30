@@ -1,7 +1,7 @@
 {
-    "name": "comp397-w2016-mailpilotdemo",
+    "name": "comp397-w2016-balloonfly",
     "version": "1.0.0",
-    "description": "COMP397-W2016-MailPilotDemo for Centennial College",
+    "description": "COMP397-W2016-BalloonFly for Centennial College",
     "main": "game.js",
     "dependencies": {
         "typescript": "^1.8.7"
@@ -22,12 +22,12 @@
     },
     "repository": {
         "type": "git",
-        "url": "git+https://github.com/MillanAir/COMP397-W2016-MailPilot.git"
+        "url": "git+https://github.com/MillanAir/COMP397-W2016-BalloonFly.git"
     },
     "author": "Milan Verma",
     "license": "MIT",
     "bugs": {
-        "url": "https://github.com/MillanAir/COMP397-W2016-MailPilot/issues"
+        "url": "https://github.com/MillanAir/COMP397-W2016-BalloonFly/issues"
     },
-    "homepage": "https://github.com/MillanAir/COMP397-W2016-MailPilot#readme"
+    "homepage": "https://github.com/MillanAir/COMP397-W2016-BalloonFly#readme"
 }
