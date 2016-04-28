@@ -19,6 +19,10 @@ var scenes;
          */
         Play.prototype._updateScore = function () {
             this._livesLabel.text = "Lives: " + livesValue;
+            //Calculate Scores
+            timer++;
+            timeInMilliseconds = Math.floor((timer) / 6);
+            scoreValue = timeInMilliseconds;
             this._scoreLabel.text = "Score: " + scoreValue;
         };
         // PUBLIC METHODS +++++++++++++++++++++

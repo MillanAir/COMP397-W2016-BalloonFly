@@ -12,6 +12,8 @@ var scene: number;
 var livesValue: number;
 var scoreValue: number;
 var highScoreValue: number = 0;
+var timer: number = 0;
+var timeInMilliseconds: number;
 
 // Game Scenes
 var menu: scenes.Menu;

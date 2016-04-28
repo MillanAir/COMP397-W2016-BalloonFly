@@ -11,6 +11,7 @@ module scenes {
         private _livesLabel: objects.Label;
         private _scoreLabel: objects.Label;
         
+        
         // CONSTRUCTOR ++++++++++++++++++++++
         constructor() {
             super();
@@ -24,6 +25,11 @@ module scenes {
          */
         private _updateScore():void {
             this._livesLabel.text = "Lives: " + livesValue;
+            
+            //Calculate Scores
+            timer++;
+            timeInMilliseconds =  Math.floor((timer)/6);
+            scoreValue = timeInMilliseconds;
             this._scoreLabel.text = "Score: " + scoreValue;
         }
         
@@ -92,6 +98,8 @@ module scenes {
                 this._knives[knife].update();
                 this._collision.check(this._knives[knife]);
             }
+            
+            
             
             this._updateScore();
         }

@@ -9,6 +9,8 @@ var scene;
 var livesValue;
 var scoreValue;
 var highScoreValue = 0;
+var timer = 0;
+var timeInMilliseconds;
 // Game Scenes
 var menu;
 var play;
