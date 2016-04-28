@@ -15,13 +15,7 @@ module scenes {
         
         // Start Method
         public start(): void {
-            console.log("Started Menu Scene...");
-            // //Add Menu Label
-            // this._menuLabel = new objects.Label(
-            //     "MENU SCENE", "60px Consolas",
-            //     "#000000",
-            //     config.Screen.CENTER_X, config.Screen.CENTER_Y, true);
-            // this.addChild(this._menuLabel);
+            console.log("Started Menu Scene...");            
             
             // add the Background Image to the MENU scene
             this._menu = new objects.Image(

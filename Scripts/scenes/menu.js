@@ -16,12 +16,6 @@ var scenes;
         // Start Method
         Menu.prototype.start = function () {
             console.log("Started Menu Scene...");
-            // //Add Menu Label
-            // this._menuLabel = new objects.Label(
-            //     "MENU SCENE", "60px Consolas",
-            //     "#000000",
-            //     config.Screen.CENTER_X, config.Screen.CENTER_Y, true);
-            // this.addChild(this._menuLabel);
             // add the Background Image to the MENU scene
             this._menu = new objects.Image("menu", 75, 25, true);
             this.addChild(this._menu);
