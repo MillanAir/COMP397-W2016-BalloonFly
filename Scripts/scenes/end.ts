@@ -4,6 +4,7 @@ module scenes {
         //PRIVATE INSTANCE VARIABLES ++++++++++++
         private _endLabel: objects.Label;
         private _restartButton: objects.Button;
+        private _scoreLabel: objects.Label;
         
         // CONSTRUCTOR ++++++++++++++++++++++
         constructor() {
@@ -17,10 +18,19 @@ module scenes {
         public start(): void {
             //Add Menu Label
             this._endLabel = new objects.Label(
-                "END SCENE", "60px Consolas",
+                "GAME OVER", "60px Consolas",
                 "#000000",
                 config.Screen.CENTER_X, config.Screen.CENTER_Y, true);
             this.addChild(this._endLabel);
+            
+            //added LivesLabel to the scene
+            this._scoreLabel = new objects.Label(
+                "Score: " + scoreValue,
+                "40px Consolas",
+                "#000000",
+                config.Screen.CENTER_X, config.Screen.CENTER_Y+100, true
+            );
+            this.addChild(this._scoreLabel);
             
             // add the BACK button to the OVER scene
             this._restartButton = new objects.Button(
