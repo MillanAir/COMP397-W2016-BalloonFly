@@ -1,6 +1,6 @@
 module objects {
     // Island CLASS ++++++++++++++++++++++++++++++++++++
-    export class Island extends objects.GameObject {
+    export class Moon extends objects.GameObject {
         // PRIVATE INSTANCE VARIABLES +++++++++++++++++
         
         // CONSTRUCTOR METHOD +++++++++++++++++++++++++

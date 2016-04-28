@@ -29,10 +29,10 @@ module managers {
               the other object is less than the minimum distance */
             if (this.distance(startPoint, endPoint) < minimumDistance) {
                 if (!object.isColliding) {
-                    // check if it's an island hit
-                    if (object.name === "island") {
-                        createjs.Sound.play("yay");
-                        scoreValue += 100; //award 100 points
+                    // check if it's an moon hit
+                    if (object.name === "moon") {
+                        createjs.Sound.play("cheer");
+                        scoreValue += 1000; //award 100 points
                     }
 
                     // check if it's a cloud hit
