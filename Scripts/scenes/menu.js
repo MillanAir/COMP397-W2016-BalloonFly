@@ -15,6 +15,7 @@ var scenes;
         // PUBLIC METHODS +++++++++++++++++++++
         // Start Method
         Menu.prototype.start = function () {
+            console.log("Started Menu Scene...");
             //Add Menu Label
             this._menuLabel = new objects.Label("MENU SCENE", "60px Consolas", "#000000", config.Screen.CENTER_X, config.Screen.CENTER_Y, true);
             this.addChild(this._menuLabel);
@@ -23,6 +24,7 @@ var scenes;
             this.addChild(this._startButton);
             // Start Button event listener
             this._startButton.on("click", this._startButtonClick, this);
+            console.log("Added start button");
             // add this scene to the global stage container
             stage.addChild(this);
         };

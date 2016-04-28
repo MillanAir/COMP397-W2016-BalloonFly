@@ -9,7 +9,7 @@ var objects;
     var Player = (function (_super) {
         __extends(Player, _super);
         function Player() {
-            _super.call(this, assets.getResult("plane"));
+            _super.call(this, assets.getResult("balloon"));
             this.width = this.getBounds().width;
             this.height = this.getBounds().height;
             this.regX = this.width * 0.5;
@@ -18,6 +18,10 @@ var objects;
             this._topBounds = this.regX;
             this._bottomBounds = config.Screen.HEIGHT - this.regX;
             this.y = 360;
+            // assign and play the engine sound
+            this.gameSound = createjs.Sound.play("music");
+            // Loop engine sound forever
+            this.gameSound.loop = -1;
         }
         Player.prototype._checkBounds = function () {
             // Left Bound Check

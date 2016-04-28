@@ -9,9 +9,10 @@ module objects{
         
         public width: number;
         public height: number;
+        public gameSound: createjs.AbstractSoundInstance;
         
         constructor(){
-            super(assets.getResult("plane"));
+            super(assets.getResult("balloon"));
             
             this.width = this.getBounds().width;
             this.height = this.getBounds().height;
@@ -25,6 +26,11 @@ module objects{
             this._bottomBounds = config.Screen.HEIGHT - this.regX;
             
             this.y = 360;
+            
+            // assign and play the engine sound
+            this.gameSound = createjs.Sound.play("music");
+            // Loop engine sound forever
+            this.gameSound.loop = -1;
         }
         
         private _checkBounds():void{

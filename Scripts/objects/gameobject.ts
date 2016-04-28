@@ -15,6 +15,8 @@ module objects {
         public height:number;
         public centerX: number;
         public centerY: number;
+        public isColliding:boolean;
+        public soundString:string;
 
         // CONSTRUCTOR METHOD +++++++++++++++++++++++++
         constructor(bitmapString: string) {

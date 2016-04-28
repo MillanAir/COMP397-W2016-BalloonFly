@@ -6,6 +6,9 @@ var stage;
 var stats;
 var currentScene;
 var scene;
+var livesValue;
+var scoreValue;
+var highScoreValue = 0;
 // Game Scenes
 var menu;
 var play;
@@ -15,11 +18,13 @@ var assetData = [
     { id: "StartButton", src: "../../Assets/images/StartButton.png" },
     { id: "RestartButton", src: "../../Assets/images/RestartButton.png" },
     { id: "BackButton", src: "../../Assets/images/BackButton.png" },
-    { id: "ocean", src: "../../Assets/images/city.png" },
-    { id: "plane", src: "../../Assets/images/balloon.png" },
-    { id: "island", src: "../../Assets/images/island.png" },
-    { id: "cloud", src: "../../Assets/images/knife.png" },
+    { id: "city", src: "../../Assets/images/city.png" },
+    { id: "balloon", src: "../../Assets/images/balloon.png" },
+    { id: "knife", src: "../../Assets/images/knife.png" },
     { id: "moon", src: "../../Assets/images/moon.png" },
+    { id: "music", src: "../../Assets/audio/funk.mp3" },
+    { id: "cheer", src: "../../Assets/audio/yay.mp3" },
+    { id: "pop", src: "../../Assets/audio/pop.mp3" }
 ];
 function preload() {
     assets = new createjs.LoadQueue();

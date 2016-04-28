@@ -9,6 +9,10 @@ var stats: Stats;
 var currentScene: objects.Scene;
 var scene: number;
 
+var livesValue: number;
+var scoreValue: number;
+var highScoreValue: number = 0;
+
 // Game Scenes
 var menu: scenes.Menu;
 var play: scenes.Play;
@@ -19,11 +23,13 @@ var assetData:objects.Asset[] = [
     {id: "StartButton", src:"../../Assets/images/StartButton.png"},
     {id: "RestartButton", src:"../../Assets/images/RestartButton.png"},
     {id: "BackButton", src:"../../Assets/images/BackButton.png"},
-    {id: "ocean", src:"../../Assets/images/city.png"},
-    {id: "plane", src:"../../Assets/images/balloon.png"},
-    {id: "island", src:"../../Assets/images/island.png"},
-    {id: "cloud", src:"../../Assets/images/knife.png"},
+    {id: "city", src:"../../Assets/images/city.png"},
+    {id: "balloon", src:"../../Assets/images/balloon.png"},
+    {id: "knife", src:"../../Assets/images/knife.png"},
     {id: "moon", src:"../../Assets/images/moon.png"},
+    {id: "music", src:"../../Assets/audio/funk.mp3"},
+    {id: "cheer", src:"../../Assets/audio/yay.mp3"},
+    {id: "pop", src:"../../Assets/audio/pop.mp3"}
 ];
 
 function preload() {

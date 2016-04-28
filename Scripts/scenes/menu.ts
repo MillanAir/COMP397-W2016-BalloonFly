@@ -14,6 +14,7 @@ module scenes {
         
         // Start Method
         public start(): void {
+            console.log("Started Menu Scene...");
             //Add Menu Label
             this._menuLabel = new objects.Label(
                 "MENU SCENE", "60px Consolas",
@@ -31,7 +32,7 @@ module scenes {
             
             // Start Button event listener
             this._startButton.on("click", this._startButtonClick, this);
-            
+            console.log("Added start button");
             
             // add this scene to the global stage container
             stage.addChild(this);

@@ -2,11 +2,11 @@
 module scenes {
     export class Play extends objects.Scene {
         //PRIVATE INSTANCE VARIABLES ++++++++++++
-        private _ocean: objects.Ocean;
+        private _city: objects.City;
         private _island: objects.Island;
-        private _clouds: objects.Cloud[];
+        private _knives: objects.Knife[];
         private _player: objects.Player;
-        private _cloudCount: number;
+        private _knifeCount: number;
         private _collision: managers.Collision;
         
         
@@ -20,14 +20,14 @@ module scenes {
         // Start Method
         public start(): void {
             
-            this._cloudCount = 6;
+            this._knifeCount = 6;
             
-            // Added cloud array
-            this._clouds = new Array<objects.Cloud>();
+            // Added knife array
+            this._knives = new Array<objects.Knife>();
             
-            // added ocean to the scene
-            this._ocean = new objects.Ocean();
-            this.addChild(this._ocean);
+            // added Knife to the scene
+            this._city = new objects.City();
+            this.addChild(this._city);
 
             // added island to the scene
             this._island = new objects.Island();
@@ -37,10 +37,10 @@ module scenes {
             this._player = new objects.Player();
             this.addChild(this._player);            
 
-            // added cloud to the scene
-            for(var cloud:number = 0; cloud < this._cloudCount ; cloud++){
-                this._clouds[cloud] = new objects.Cloud();
-                this.addChild(this._clouds[cloud]);
+            // added knife to the scene
+            for(var knife:number = 0; knife < this._knifeCount ; knife++){
+                this._knives[knife] = new objects.Knife();
+                this.addChild(this._knives[knife]);
             }
             
             // added collision manager to the scene
@@ -52,12 +52,12 @@ module scenes {
 
         // PLAY Scene updates here
         public update(): void {
-            this._ocean.update();
+            this._city.update();
             this._island.update();
             this._player.update();
-            for(var cloud in this._clouds){
-                this._clouds[cloud].update();
-                this._collision.check(this._clouds[cloud]);
+            for(var knife in this._knives){
+                this._knives[knife].update();
+                this._collision.check(this._knives[knife]);
             }
             
             

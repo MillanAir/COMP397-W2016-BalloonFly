@@ -1,16 +1,17 @@
 module objects {
     // OCEAN CLASS ++++++++++++++++++++++++++++++++++++
-    export class Cloud extends objects.GameObject {
+    export class Knife extends objects.GameObject {
         // PRIVATE INSTANCE VARIABLES +++++++++++++++++
         
         // CONSTRUCTOR METHOD +++++++++++++++++++++++++
         constructor() {
-            super("cloud");
+            super("knife");
             
            this._speed.x = -5; //cloud speed
            this._reset(this._rightBounds);
            
-           this.name = "cloud";
+           this.name = "knife";
+           this.soundString = "pop";
         }
         
         // PRIVATE METHODS ++++++++++++++++++++++++++++

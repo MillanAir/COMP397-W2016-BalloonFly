@@ -6,18 +6,19 @@ var __extends = (this && this.__extends) || function (d, b) {
 var objects;
 (function (objects) {
     // OCEAN CLASS ++++++++++++++++++++++++++++++++++++
-    var Cloud = (function (_super) {
-        __extends(Cloud, _super);
+    var Knife = (function (_super) {
+        __extends(Knife, _super);
         // PRIVATE INSTANCE VARIABLES +++++++++++++++++
         // CONSTRUCTOR METHOD +++++++++++++++++++++++++
-        function Cloud() {
-            _super.call(this, "cloud");
+        function Knife() {
+            _super.call(this, "knife");
             this._speed.x = -5; //cloud speed
             this._reset(this._rightBounds);
-            this.name = "cloud";
+            this.name = "knife";
+            this.soundString = "pop";
         }
         // PRIVATE METHODS ++++++++++++++++++++++++++++
-        Cloud.prototype._checkBounds = function (value) {
+        Knife.prototype._checkBounds = function (value) {
             // check to see if the top of the island 
             // has outside the viewport         
             if (this.x <= (value - this.width)) {
@@ -25,22 +26,22 @@ var objects;
             }
         };
         // reset the ocean offscreen
-        Cloud.prototype._reset = function (value) {
+        Knife.prototype._reset = function (value) {
             this._speed.x = Math.floor(Math.random() * 5) + 5;
             this._speed.y = Math.floor(Math.random() * 4) - 2;
             this.x = value + this.width + 10;
             this.y = Math.floor(Math.random() * this._bottomBounds) + this._topBounds;
         };
         // PUBLIC METHODS ++++++++++++++++++++++++++++++
-        Cloud.prototype.update = function () {
+        Knife.prototype.update = function () {
             // scroll the ocean 5 px per frame
             this.x -= this._speed.x;
             this.y += this._speed.y;
             this._checkBounds(this._leftBounds);
         };
-        return Cloud;
+        return Knife;
     }(objects.GameObject));
-    objects.Cloud = Cloud;
+    objects.Knife = Knife;
 })(objects || (objects = {}));
 
-//# sourceMappingURL=cloud.js.map
+//# sourceMappingURL=knife.js.map
