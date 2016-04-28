@@ -8,6 +8,8 @@ module scenes {
         private _player: objects.Player;
         private _knifeCount: number;
         private _collision: managers.Collision;
+        private _lives: objects.Image;
+        private _scores: objects.Image;
         private _livesLabel: objects.Label;
         private _scoreLabel: objects.Label;
         
@@ -24,13 +26,13 @@ module scenes {
          * @return void
          */
         private _updateScore():void {
-            this._livesLabel.text = "Lives: " + livesValue;
+            this._livesLabel.text = "" + livesValue;
             
             //Calculate Scores
             timer++;
             timeInMilliseconds =  Math.floor((timer)/6);
             scoreValue = timeInMilliseconds;
-            this._scoreLabel.text = "Score: " + scoreValue;
+            this._scoreLabel.text = "" + scoreValue;
         }
         
         // PUBLIC METHODS +++++++++++++++++++++
@@ -63,21 +65,35 @@ module scenes {
                 this.addChild(this._knives[knife]);
             }
             
+            //added Lives to the scene
+            this._lives = new objects.Image(
+                "lives",
+                95,
+                30, true);
+            this.addChild(this._lives);
+            
             //added LivesLabel to the scene
             this._livesLabel = new objects.Label(
                 "Lives: " + livesValue,
                 "40px Consolas",
-                "#ffff00",
-                10, 10, false
+                "#ff7474",
+                150, 10, false
             );
             this.addChild(this._livesLabel);
             
-            //added LivesLabel to the scene
+            //added Scores to the scene
+            this._scores = new objects.Image(
+                "scores",
+                1000,
+                30, true);
+            this.addChild(this._scores);
+            
+            //added ScoreLabel to the scene
             this._scoreLabel = new objects.Label(
                 "Score: " + scoreValue,
                 "40px Consolas",
-                "#ffff00",
-                390, 10, false
+                "#ff7474",
+                1075, 10, false
             );
             this.addChild(this._scoreLabel);
             

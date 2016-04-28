@@ -18,12 +18,12 @@ var scenes;
          * @return void
          */
         Play.prototype._updateScore = function () {
-            this._livesLabel.text = "Lives: " + livesValue;
+            this._livesLabel.text = "" + livesValue;
             //Calculate Scores
             timer++;
             timeInMilliseconds = Math.floor((timer) / 6);
             scoreValue = timeInMilliseconds;
-            this._scoreLabel.text = "Score: " + scoreValue;
+            this._scoreLabel.text = "" + scoreValue;
         };
         // PUBLIC METHODS +++++++++++++++++++++
         // Start Method
@@ -47,11 +47,17 @@ var scenes;
                 this._knives[knife] = new objects.Knife();
                 this.addChild(this._knives[knife]);
             }
+            //added Lives to the scene
+            this._lives = new objects.Image("lives", 95, 30, true);
+            this.addChild(this._lives);
             //added LivesLabel to the scene
-            this._livesLabel = new objects.Label("Lives: " + livesValue, "40px Consolas", "#ffff00", 10, 10, false);
+            this._livesLabel = new objects.Label("Lives: " + livesValue, "40px Consolas", "#ff7474", 150, 10, false);
             this.addChild(this._livesLabel);
-            //added LivesLabel to the scene
-            this._scoreLabel = new objects.Label("Score: " + scoreValue, "40px Consolas", "#ffff00", 390, 10, false);
+            //added Scores to the scene
+            this._scores = new objects.Image("scores", 1000, 30, true);
+            this.addChild(this._scores);
+            //added ScoreLabel to the scene
+            this._scoreLabel = new objects.Label("Score: " + scoreValue, "40px Consolas", "#ff7474", 1075, 10, false);
             this.addChild(this._scoreLabel);
             // added collision manager to the scene
             this._collision = new managers.Collision(this._player);

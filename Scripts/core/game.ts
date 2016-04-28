@@ -25,6 +25,8 @@ var assetData:objects.Asset[] = [
     {id: "StartButton", src:"../../Assets/images/StartButton.png"},
     {id: "RestartButton", src:"../../Assets/images/RestartButton.png"},
     {id: "BackButton", src:"../../Assets/images/BackButton.png"},
+    {id: "lives", src:"../../Assets/images/lives.png"},
+    {id: "scores", src:"../../Assets/images/scores.png"},
     {id: "menu", src:"../../Assets/images/menu.png"},
     {id: "end", src:"../../Assets/images/end.png"},
     {id: "city", src:"../../Assets/images/city.png"},
