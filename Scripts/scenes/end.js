@@ -18,8 +18,11 @@ var scenes;
             // add the Background Image to the End scene
             this._end = new objects.Image("end", 75, 25, true);
             this.addChild(this._end);
-            //added LivesLabel to the scene
-            this._scoreLabel = new objects.Label("Score: " + scoreValue, "40px Consolas", "#000000", config.Screen.CENTER_X, config.Screen.CENTER_Y + 50, true);
+            //added Scores to the scene
+            this._scores = new objects.Image("scores", config.Screen.CENTER_X - 50, config.Screen.CENTER_Y + 50, true);
+            this.addChild(this._scores);
+            //added ScoreLabel to the scene
+            this._scoreLabel = new objects.Label("" + scoreValue, "40px Consolas", "#ff7474", config.Screen.CENTER_X + 50, config.Screen.CENTER_Y + 45, true);
             this.addChild(this._scoreLabel);
             // add the BACK button to the OVER scene
             this._restartButton = new objects.Button("RestartButton", config.Screen.CENTER_X, config.Screen.CENTER_Y + 320, true);

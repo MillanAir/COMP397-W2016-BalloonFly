@@ -6,6 +6,7 @@ module scenes {
         private _restartButton: objects.Button;
         private _scoreLabel: objects.Label;
         private _end: objects.Image;
+        private _scores: objects.Image;
         
         // CONSTRUCTOR ++++++++++++++++++++++
         constructor() {
@@ -24,13 +25,18 @@ module scenes {
                 75,
                 25, true);
             this.addChild(this._end);
+            //added Scores to the scene
+            this._scores = new objects.Image(
+                "scores",
+                config.Screen.CENTER_X-50, config.Screen.CENTER_Y+50, true);
+            this.addChild(this._scores);            
             
-            //added LivesLabel to the scene
+            //added ScoreLabel to the scene
             this._scoreLabel = new objects.Label(
-                "Score: " + scoreValue,
+                "" + scoreValue,
                 "40px Consolas",
-                "#000000",
-                config.Screen.CENTER_X, config.Screen.CENTER_Y+50, true
+                "#ff7474",
+                config.Screen.CENTER_X+50, config.Screen.CENTER_Y+45, true
             );
             this.addChild(this._scoreLabel);
             
