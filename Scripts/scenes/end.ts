@@ -5,6 +5,7 @@ module scenes {
         private _endLabel: objects.Label;
         private _restartButton: objects.Button;
         private _scoreLabel: objects.Label;
+        private _end: objects.Image;
         
         // CONSTRUCTOR ++++++++++++++++++++++
         constructor() {
@@ -15,20 +16,21 @@ module scenes {
         
         
         // Start Method
-        public start(): void {
-            //Add Menu Label
-            this._endLabel = new objects.Label(
-                "GAME OVER", "60px Consolas",
-                "#000000",
-                config.Screen.CENTER_X, config.Screen.CENTER_Y, true);
-            this.addChild(this._endLabel);
+        public start(): void {            
+            
+            // add the Background Image to the End scene
+            this._end = new objects.Image(
+                "end",
+                75,
+                25, true);
+            this.addChild(this._end);
             
             //added LivesLabel to the scene
             this._scoreLabel = new objects.Label(
                 "Score: " + scoreValue,
                 "40px Consolas",
                 "#000000",
-                config.Screen.CENTER_X, config.Screen.CENTER_Y+100, true
+                config.Screen.CENTER_X, config.Screen.CENTER_Y+50, true
             );
             this.addChild(this._scoreLabel);
             
@@ -36,7 +38,7 @@ module scenes {
             this._restartButton = new objects.Button(
                 "RestartButton",
                 config.Screen.CENTER_X,
-                config.Screen.CENTER_Y + 180, true);
+                config.Screen.CENTER_Y + 320, true);
             this.addChild(this._restartButton);
            
             // START_OVER Button event listener
